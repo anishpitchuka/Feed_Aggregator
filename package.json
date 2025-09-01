@@ -1,18 +1,22 @@
 {
-  "name": "feed-aggregator",
+  "name": "gator",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
   "type": "module",
   "scripts": {
-    "start": "tsx ./src/index.ts"
+    "start": "tsx ./src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "@types/node": "^22.10.1",
+    "drizzle-kit": "^0.30.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.1"
   }
 }
