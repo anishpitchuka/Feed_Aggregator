@@ -1,7 +1,7 @@
 import {type CommandsRegistry, registerCommand, runCommand,} from "./commands/commands";
-import { handlerLogin } from "./commands/users";
+import { handlerLogin, handlerRegister} from "./commands/users";
 
-function main() {
+async function  main() {
   const args = process.argv.slice(2);
 
   //check if a non empty command is being typed
@@ -16,12 +16,13 @@ function main() {
   
   //add login command to the commands registry
   registerCommand(commandsRegistry, "login", handlerLogin);
+  registerCommand(commandsRegistry, "register", handlerRegister);
   
   //----------add any new commands in the future like help, users etc.,-----------//
 
   //check for any errors
   try {
-    runCommand(commandsRegistry, cmdName, ...cmdArgs);
+    await runCommand(commandsRegistry, cmdName, ...cmdArgs);
   } catch (err){
     if(err instanceof Error) {
       console.log(`Error running command, ${cmdName} ${err.message}`);
@@ -30,6 +31,7 @@ function main() {
     }
     process.exit(1);
   }
+  process.exit(0);
 }
 
 main();
