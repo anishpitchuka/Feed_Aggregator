@@ -14,7 +14,7 @@ export async function handlerLogin(cmdName: string, ...args: string[]) {
     setUser(existingUser.name);
     console.log(`user is switched successfully!!!`);
 }
-
+//register function
 export async function handlerRegister(cmdName: string, ...args: string []) {
     if(args.length === 0) {
         throw new Error(`usage: ${cmdName} <name>`);

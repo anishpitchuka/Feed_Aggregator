@@ -2,6 +2,7 @@ import { time } from "console";
 import { isNotNull } from "drizzle-orm";
 import { pgTable, uuid, timestamp, text } from "drizzle-orm/pg-core";
 
+//schema for our users table
 export const users = pgTable("users", {
     id: uuid("id").primaryKey().defaultRandom().notNull(),
     createdAt: timestamp("created_at").notNull().defaultNow(),

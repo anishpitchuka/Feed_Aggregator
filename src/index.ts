@@ -16,6 +16,7 @@ async function  main() {
   
   //add login command to the commands registry
   registerCommand(commandsRegistry, "login", handlerLogin);
+  //add register command to the commands registry
   registerCommand(commandsRegistry, "register", handlerRegister);
   
   //----------add any new commands in the future like help, users etc.,-----------//
