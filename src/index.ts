@@ -1,6 +1,6 @@
 import {type CommandsRegistry, registerCommand, runCommand,} from "./commands/commands";
 import { handlerReset } from "./commands/reset";
-import { handlerLogin, handlerRegister} from "./commands/users";
+import { handlerLogin, handlerRegister, handlerUserList} from "./commands/users";
 
 async function  main() {
   const args = process.argv.slice(2);
@@ -17,10 +17,15 @@ async function  main() {
   
   //add login command to the commands registry
   registerCommand(commandsRegistry, "login", handlerLogin);
+
   //add register command to the commands registry
   registerCommand(commandsRegistry, "register", handlerRegister);
+
   //add reset command to the commands registry
-  registerCommand(commandsRegistry, "reset",handlerReset)
+  registerCommand(commandsRegistry, "reset",handlerReset);
+  
+  //add users command to the commands registry
+  registerCommand(commandsRegistry, "users", handlerUserList);
   
   //----------add any new commands in the future like help, users etc.,-----------//
 
