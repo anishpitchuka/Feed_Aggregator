@@ -1,3 +1,4 @@
+import { handlerAgg } from "./commands/aggregate";
 import {type CommandsRegistry, registerCommand, runCommand,} from "./commands/commands";
 import { handlerReset } from "./commands/reset";
 import { handlerLogin, handlerRegister, handlerUserList} from "./commands/users";
@@ -26,6 +27,9 @@ async function  main() {
   
   //add users command to the commands registry
   registerCommand(commandsRegistry, "users", handlerUserList);
+
+  //add agg command to the commands registry
+  registerCommand(commandsRegistry, "agg", handlerAgg);
   
   //----------add any new commands in the future like help, users etc.,-----------//
 

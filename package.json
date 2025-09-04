@@ -17,6 +17,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "drizzle-orm": "^0.38.1"
+    "drizzle-orm": "^0.38.1",
+    "fast-xml-parser": "^5.2.5"
   }
 }
