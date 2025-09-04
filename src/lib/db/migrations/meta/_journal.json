@@ -8,6 +8,13 @@
       "when": 1756735513053,
       "tag": "0000_green_guardsmen",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1757004404138,
+      "tag": "0001_lazy_harpoon",
+      "breakpoints": true
     }
   ]
 }
