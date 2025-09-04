@@ -13,3 +13,8 @@ export async function createFeed(feedname: string, url: string, userId: string) 
     
     return firstOrUndefined(result);
 }
+
+//returns the feeds table(or db)
+export async function getFeeds() {
+    return await db.select().from(feeds);
+}
