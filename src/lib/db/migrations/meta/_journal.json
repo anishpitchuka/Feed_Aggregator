@@ -15,6 +15,13 @@
       "when": 1757004404138,
       "tag": "0001_lazy_harpoon",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1757347311437,
+      "tag": "0002_flawless_archangel",
+      "breakpoints": true
     }
   ]
 }

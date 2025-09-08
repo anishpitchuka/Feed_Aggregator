@@ -1,5 +1,6 @@
 import { handlerAgg } from "./commands/aggregate";
 import {type CommandsRegistry, registerCommand, runCommand,} from "./commands/commands";
+import { handlerFollow, handlerListFeedFollows } from "./commands/feed-follows";
 import { handlerAddFeed, handlerListFeeds } from "./commands/feeds";
 import { handlerReset } from "./commands/reset";
 import { handlerLogin, handlerRegister, handlerUserList} from "./commands/users";
@@ -37,6 +38,12 @@ async function  main() {
 
   //add feeds command to the commands registry
   registerCommand(commandsRegistry, "feeds", handlerListFeeds);
+
+  //add follow command to the commands registry
+  registerCommand(commandsRegistry, "follow", handlerFollow);
+
+  //add following command to the commands registry
+  registerCommand(commandsRegistry, "following", handlerListFeedFollows);
 
   //----------add any new commands in the future like help, users etc.,-----------//
 
