@@ -4,6 +4,7 @@ import { handlerFollow, handlerListFeedFollows } from "./commands/feed-follows";
 import { handlerAddFeed, handlerListFeeds } from "./commands/feeds";
 import { handlerReset } from "./commands/reset";
 import { handlerLogin, handlerRegister, handlerUserList} from "./commands/users";
+import { middlewareLoggedIn } from "./middleware";
 
 async function  main() {
   const args = process.argv.slice(2);
@@ -34,16 +35,16 @@ async function  main() {
   registerCommand(commandsRegistry, "agg", handlerAgg);
   
   //add addfeed command to the commands registry
-  registerCommand(commandsRegistry, "addfeed", handlerAddFeed);
+  registerCommand(commandsRegistry, "addfeed", middlewareLoggedIn(handlerAddFeed));
 
   //add feeds command to the commands registry
   registerCommand(commandsRegistry, "feeds", handlerListFeeds);
 
   //add follow command to the commands registry
-  registerCommand(commandsRegistry, "follow", handlerFollow);
+  registerCommand(commandsRegistry, "follow", middlewareLoggedIn(handlerFollow));
 
   //add following command to the commands registry
-  registerCommand(commandsRegistry, "following", handlerListFeedFollows);
+  registerCommand(commandsRegistry, "following", middlewareLoggedIn(handlerListFeedFollows));
 
   //----------add any new commands in the future like help, users etc.,-----------//
 
