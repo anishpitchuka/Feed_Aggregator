@@ -1,4 +1,5 @@
 import { handlerAgg } from "./commands/aggregate";
+import { handlerBrowse } from "./commands/browse";
 import {type CommandsRegistry, registerCommand, runCommand,} from "./commands/commands";
 import { handlerFollow, handlerListFeedFollows, handlerUnfollow } from "./commands/feed-follows";
 import { handlerAddFeed, handlerListFeeds } from "./commands/feeds";
@@ -48,6 +49,9 @@ async function  main() {
 
   //add unfollow command to the commands registry
   registerCommand(commandsRegistry, "unfollow", middlewareLoggedIn(handlerUnfollow));
+
+  //add browse command to the commands registry
+  registerCommand(commandsRegistry, "browse", middlewareLoggedIn(handlerBrowse));
 
   //----------add any new commands in the future like help, users etc.,-----------//
 
