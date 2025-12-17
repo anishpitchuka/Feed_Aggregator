@@ -39,47 +39,12 @@ A powerful command-line RSS feed aggregator built with TypeScript. Subscribe to 
    npm install
    ```
 
-3. **Create the configuration file**
-
-   Create a file named `.gatorconfig.json` in your home directory:
-
-   ```bash
-   touch ~/.gatorconfig.json
-   ```
-
-   Add the following content (replace with your PostgreSQL connection string):
-
-   ```json
-   {
-     "db_url": "postgresql://username:password@localhost:5432/gator",
-     "current_user_name": ""
-   }
-   ```
-
-4. **Run database migrations**
+3. **Run database migrations**
 
    ```bash
    npm run generate
    npm run migrate
    ```
-
-## Configuration
-
-The application uses a JSON configuration file located at `~/.gatorconfig.json`:
-
-| Field | Description |
-|-------|-------------|
-| `db_url` | PostgreSQL connection string |
-| `current_user_name` | Currently logged-in user (managed by the app) |
-
-### Example Configuration
-
-```json
-{
-  "db_url": "postgresql://postgres:mysecretpassword@localhost:5432/gator",
-  "current_user_name": "john"
-}
-```
 
 ## Usage
 
